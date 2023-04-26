@@ -185,7 +185,7 @@ const News = (props)=>{
 
 
     const fetchMoreData = async () => {   
-        const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page+1}&pageSize=${props.pageSize}`;
+        const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apikey=${props.apikey}&page=${page+1}&pageSize=${props.pageSize}`;
         setPage(page+1) 
         let data = await fetch(url);
         let parsedData = await data.json()
@@ -224,18 +224,12 @@ News.defaultProps = {
     country: 'in',
     pageSize: 8,
     category: 'general',
-    apikey:"c2e4678ecd3b475c9410ed1187b0436b",
-    key:"general",
-    setProgress:1
 }
 
 News.propTypes = {
     country: PropTypes.string,
     pageSize: PropTypes.number,
     category: PropTypes.string,
-    apikey:PropTypes.string,
-    key:PropTypes.string,
-    setProgress:PropTypes.number
 }
 
 export default News
