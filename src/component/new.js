@@ -5,6 +5,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import PropTypes from "prop-types";
 
 
+
 const News=(props)=> {
   const [articles,setArticles]=useState([])
   const [loading,setLoading]=useState(false)
@@ -26,7 +27,7 @@ const News=(props)=> {
     setLoading(false)
     props.setProgress(100);
   }
-
+   
   useEffect(()=>
   {
     document.title = `${capitalizeFirstLetter(
@@ -91,6 +92,16 @@ News.propTypes = {
   pageSize: PropTypes.number,
   category: PropTypes.string
 };
+    country: 'in',
+    pageSize: 8,
+    category: 'general',
+}
+
+News.propTypes = {
+    country: PropTypes.string,
+    pageSize: PropTypes.number,
+    category: PropTypes.string,
+}
 
 export default News;
     
